@@ -50,10 +50,11 @@ Cross-site **`navigate`** may open a **background** tab so another window can st
 ## What the skill teaches agents
 
 - Batch work with MCP **`run`** + **`expect`**, not serial click/observe loops.
-- **Id-first** clicks from the latest observe dump.
-- Commerce, tab roster, MCP strike rules, and no fake shopping lists when the user asked for a real cart.
+- **Id-first** clicks from the latest observe dump. Ids look like `n29kq7` and belong to that page only.
+- One **lane** name per task. The server runs 5 lanes at a time and queues the rest.
+- Close that lane only when the user asks ("then close it") via a `finish` step. "Keep it open" leaves the tab.
 
-Tools: `observe`, `navigate`, `run`, `click`, `type`, `press`, `scroll`, `focus`, `feedback`.
+Tools: `observe`, `navigate`, `run` (steps include `click`, `type`, `press`, `scroll`, `focus`, `finish`, `mode`), `feedback`. Standalone `click` / `type` are disabled on the hosted relay.
 
 ## FAQ
 
